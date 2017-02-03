@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 
 import { WikiComponent } from './wiki.component';
+import { MarkdownPipe } from '../../markdown.pipe';
 
-import { MarkdownPipe } from './markdown.pipe';
+import { wikiRouting, wikiRoutingProviders }  from './wiki.routes';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule
+    FormsModule,
+    wikiRouting
   ],
   declarations: [
     WikiComponent,
     MarkdownPipe
-  ]
+  ],
+  providers: [
+    wikiRoutingProviders
+  ],
 })
 export class WikiModule { }

@@ -10,7 +10,7 @@ import { Issue } from '../issue';
 @Component({
   selector: 'app-issue-update',
   templateUrl: './issue-update.component.html',
-  styleUrls: ['./issue-update.component.scss']
+  styleUrls: ['./issue-update.component.css']
 })
 export class IssueUpdateComponent implements OnInit {
 

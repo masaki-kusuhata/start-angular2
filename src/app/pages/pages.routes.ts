@@ -5,17 +5,16 @@ import { PagesComponent } from './pages.component';
 import { TopComponent } from './top/top.component';
 import { IssueComponent } from './issue/issue.component';
 import { IssueUpdateComponent } from './issue/issue-update/issue-update.component';
-import { WikiComponent } from './wiki/wiki.component';
 
 const pagesRoutes: Routes = [
-  { path: 'pages',
+  { path: '',
     component: PagesComponent,
     children: [
-      { path: '', redirectTo: 'top', pathMatch: 'full'},
-      { path: 'top', component: TopComponent, data: {title: 'Top'} },
-      { path: 'issue', component: IssueComponent, data: {title: 'Issue'} },
-      { path: 'issue/update/:id', component: IssueUpdateComponent, data: {title: 'Issue Update'} },
-      { path: 'wiki', component: WikiComponent, data: {title: 'Wiki'} }
+      { path: '', component: TopComponent },
+      { path: 'top', component: TopComponent },
+      { path: 'issue', component: IssueComponent },
+      { path: 'issue/update/:id', component: IssueUpdateComponent },
+      { path: 'wiki', loadChildren: 'app/pages/wiki/wiki.module#WikiModule' }
     ]
   }
 ];
